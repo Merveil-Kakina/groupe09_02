@@ -4,12 +4,13 @@
 """
 
 
-usd = float(input("Montant en USD : "))
+class ConvertisseurDevises:
+    def __init__(self, usd):
+        self.usd = usd
+    def convertir(self):
+        print(f"EUR : {self.usd * 0.93:.2f}")
+        print(f"CFA : {self.usd * 610:.2f}")
+        print(f"GBP : {self.usd * 0.79:.2f}")
+if __name__ == "__main__":
+    usd = float(input("Usd : "))
 
-eur = usd * 0.93
-cfa = usd * 610
-gbp = usd * 0.79
-
-print(f"{usd} USD = {eur:.2f} EUR")
-print(f"{usd} USD = {cfa:.2f} CFA")
-print(f"{usd} USD = {gbp:.2f} GBP")

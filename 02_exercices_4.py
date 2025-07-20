@@ -3,15 +3,14 @@ Demander trois notes (sur 20), calculer la moyenne et dire si l’étudiant est 
 """
 
 
-note1 = float(input("Première note : "))
-note2 = float(input("Deuxième note : "))
-note3 = float(input("Troisième note : "))
-
-moyenne = (note1 + note2 + note3) / 3
-
-print(f"Moyenne : {moyenne:.2f}")
-
-if moyenne >= 10:
-    print("L’étudiant est reçu.")
-else:
-    print("L’étudiant n’est pas reçu.")
+class MoyenneNotes:
+    def __init__(self, notes):
+        self.notes = notes
+    def calculer(self):
+        moy = sum(self.notes) / len(self.notes)
+        etat = "Reçu" if moy >= 10 else "Non reçu"
+        print(f"Moyenne : {moy:.2f}, {etat}")
+if __name__ == "__main__":
+    notes = input("Notes : ")
+    obj = MoyenneNotes(notes)
+    obj.calculer()
